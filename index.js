@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const importData = require("./data.json")
+const importTravelData = require("./travel-vlog.json")
 let port = process.env.PORT || 3000;
 
 app.get("/", (req,res) => {
@@ -12,7 +13,7 @@ app.get("/vlog", (req, res) => {
 })
 
 app.get("/travel-vlog", (req, res) => {
-    res.send(importData)
+    res.send(importTravelData)
 })
 
 app.listen(port, () => {
