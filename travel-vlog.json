@@ -1,5 +1,73 @@
 [
     {
-        "imageUrl": "https://travelblog96group.s3.ap-southeast-1.amazonaws.com/Manukan+Island+Sabah.jpg"
+        "albumId": 1,
+        "id": 1,
+        "title": "Manukan Island Sabah",
+        "url": "https://travelblog96group.s3.ap-southeast-1.amazonaws.com/Manukan+Island+Sabah.jpg"
+    },
+
+    {
+        "albumId": 1,
+        "id": 2,
+        "title": "Batu Ferringhi Malaysia",
+        "url": "https://travelblog96group.s3.ap-southeast-1.amazonaws.com/batu+ferringhi+malaysia.jpg"
+    },
+
+    {
+        "albumId": 1,
+        "id": 3,
+        "title": "Coral Beach",
+        "url": "https://travelblog96group.s3.ap-southeast-1.amazonaws.com/coral+beach.jpg"
+    },
+
+    {
+        "albumId": 1,
+        "id": 4,
+        "title": "Long Beach Malaysia",
+        "url": "https://travelblog96group.s3.ap-southeast-1.amazonaws.com/long+beach+malaysia.jpg"
+    },
+
+    {
+        "albumId": 1,
+        "id": 5,
+        "title": "Pantai Cenang Beach Resort",
+        "url": "https://travelblog96group.s3.ap-southeast-1.amazonaws.com/pantai+cenang+beach+resort.jpg"
+    },
+
+    {
+        "albumId": 1,
+        "id": 6,
+        "title": "Sipadan Island Malaysia",
+        "url": "https://travelblog96group.s3.ap-southeast-1.amazonaws.com/Sipadan+Island+Malaysia.jpg"
+    },
+
+    {
+        "albumId": 1,
+        "id": 7,
+        "title": "Taaras Beach Resort and Spa",
+        "url": "https://travelblog96group.s3.ap-southeast-1.amazonaws.com/taaras+beach+resort+and+spa.jpg"
+    },
+
+    {
+        "albumId": 1,
+        "id": 8,
+        "title": "Tanjung rhu Lingkawi",
+        "url": "https://travelblog96group.s3.ap-southeast-1.amazonaws.com/tanjung+rhu+lingkawi.jpg"
+    },
+
+    {
+        "albumId": 1,
+        "id": 9,
+        "title": "Teluk Nipah",
+        "url": "https://travelblog96group.s3.ap-southeast-1.amazonaws.com/Teluk+Nipah.jpg"
+    },
+
+    {
+        "albumId": 1,
+        "id": 10,
+        "title": "Turtle Beach",
+        "url": "https://travelblog96group.s3.ap-southeast-1.amazonaws.com/turtle+beach.jpg"
     }
+
 ]
+
