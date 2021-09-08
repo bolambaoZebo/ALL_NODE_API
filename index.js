@@ -11,7 +11,7 @@ app.get("/vlog", (req, res) => {
     res.send(importData)
 })
 
-app.get("/travel-blog", (req, res) => {
+app.get("/travel-vlog", (req, res) => {
     res.send(importData)
 })
 
