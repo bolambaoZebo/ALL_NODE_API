@@ -11,6 +11,10 @@ app.get("/vlog", (req, res) => {
     res.send(importData)
 })
 
+app.get("/travel-blog", (req, res) => {
+    res.send(importData)
+})
+
 app.listen(port, () => {
     console.log(`exampl;e app is listening on port ${port}`)
 })
