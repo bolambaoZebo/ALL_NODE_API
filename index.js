@@ -32,7 +32,7 @@ app.get("/travel-vlog", (req, res) => {
     res.send(importTravelData)
 })
 
-ROUTES
+//ROUTES
 app.use('/posts', postRoute)
 
 
