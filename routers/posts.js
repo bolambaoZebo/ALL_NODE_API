@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/Posts');
 
+router.get('/', () => {
+    res.send("hello wold")
+});
+
 router.post('/', (req,res) => {
     const post = new Post({
         title: req.body.title,
