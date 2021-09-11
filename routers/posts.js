@@ -8,8 +8,8 @@ router.get('/', (req, res) => {
 
 router.post('/', (req,res) => {
     const post = new Post({
-        title: req.body.title,
-        description: req.body.description
+        title: 'hello',
+        description: 'wolrd'
     })
     
     post.save()
