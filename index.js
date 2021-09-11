@@ -8,17 +8,17 @@ const bodyParser = require('body-parser');
 const postRoute = require('./routers/posts');
 
 
-require('dotenv/config');
+// require('dotenv/config');
 let port = process.env.PORT || 3000;
 
 
-app.use(bodyParser.json)
+// app.use(bodyParser.json)
 
-mongoose.connect(
-    process.env.DB_CONNECTION,
-    () => {
-    console.log('connect db')
-})
+// mongoose.connect(
+//     process.env.DB_CONNECTION,
+//     () => {
+//     console.log('connect db')
+// })
 
 app.get("/", (req,res) => {
     res.send("hello world")
@@ -33,7 +33,7 @@ app.get("/travel-vlog", (req, res) => {
 })
 
 //ROUTES
-app.use('/posts', postRoute)
+// app.use('/posts', postRoute)
 
 
 app.listen(port, () => {
