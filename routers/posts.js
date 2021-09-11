@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/Posts');
 
-router.get('/', () => {
+router.get('/', (req, res) => {
     res.send("hello wold")
 });
 
