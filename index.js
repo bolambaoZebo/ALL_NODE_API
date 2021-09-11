@@ -2,23 +2,23 @@ const express = require("express");
 const app = express();
 const importData = require("./data.json")
 const importTravelData = require("./travel-vlog.json")
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+// const mongoose = require('mongoose');
+// const bodyParser = require('body-parser');
 
 // const postRoute = require('./routers/posts');
 
 
-require('dotenv/config');
+// require('dotenv/config');
 let port = process.env.PORT || 3000;
 
 
-app.use(bodyParser.json)
+// app.use(bodyParser.json)
 
-mongoose.connect(
-    process.env.DB_CONNECTION,
-    () => {
-    console.log('connect db')
-})
+// mongoose.connect(
+//     process.env.DB_CONNECTION,
+//     () => {
+//     console.log('connect db')
+// })
 
 app.get("/", (req,res) => {
     res.send("hello world")
