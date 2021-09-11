@@ -11,8 +11,7 @@ const postRoute = require('./routers/posts');
 // require('dotenv/config');
 let port = process.env.PORT || 3000;
 
-
-app.use(bodyParser.json)
+app.use(bodyParser.json())
 
 mongoose.connect(
     process.env.DATABASE,
