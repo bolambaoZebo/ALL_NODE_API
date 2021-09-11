@@ -15,7 +15,7 @@ let port = process.env.PORT || 3000;
 // app.use(bodyParser.json)
 
 mongoose.connect(
-    process.env.DB_CONNECTION,
+    process.env.DATABASE,
     () => {
     console.log('connect db')
 })
