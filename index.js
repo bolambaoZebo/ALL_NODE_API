@@ -33,7 +33,7 @@ app.get("/travel-vlog", (req, res) => {
 })
 
 //ROUTES
-// app.use('/posts', postRoute)
+app.use('/posts', postRoute)
 
 
 app.listen(port, () => {
