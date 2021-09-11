@@ -5,7 +5,7 @@ const importTravelData = require("./travel-vlog.json")
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-const postRoute = require('./routers/posts');
+// const postRoute = require('./routers/posts');
 
 
 require('dotenv/config');
@@ -33,7 +33,7 @@ app.get("/travel-vlog", (req, res) => {
 })
 
 //ROUTES
-app.use('/posts', postRoute)
+// app.use('/posts', postRoute)
 
 
 app.listen(port, () => {
