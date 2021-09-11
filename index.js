@@ -14,11 +14,11 @@ let port = process.env.PORT || 3000;
 
 // app.use(bodyParser.json)
 
-// mongoose.connect(
-//     process.env.DB_CONNECTION,
-//     () => {
-//     console.log('connect db')
-// })
+mongoose.connect(
+    process.env.DB_CONNECTION,
+    () => {
+    console.log('connect db')
+})
 
 app.get("/", (req,res) => {
     res.send("hello world")
