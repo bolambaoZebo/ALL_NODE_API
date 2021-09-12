@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require('cors');
 
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -14,6 +15,7 @@ const casinoPokerTipsRoute = require('./routers/casinoPokerTips');
 let port = process.env.PORT || 3000;
 
 app.use(bodyParser.json())
+app.use(cors())
 
 mongoose.connect(
     process.env.DATABASE,
