@@ -25,22 +25,23 @@ router.post('/register', async (req,res) => {
 
     //VALIDATE DATA FROM THE USER
     const {error} = schema.validate(req.body)//Joi.valid(req.body, schema)
-
-    res.send(error.details[0].message)
-//     const user = new User({
-//         name: req.body.name,
-//         password: req.body.password,
-//         phone: req.body.phone,
-//         location: req.body.location,
-//         email: req.body.email,
-//     })
     
-//    try{
-//     const saveUser = await user.save()
-//     res.json(saveUser)
-//    }catch(err){
-//         res.status(404).send(err)
-//     }
+    if(error) return res.status(400).send(error.details[0].message)
+    
+    const user = new User({
+        name: req.body.name,
+        password: req.body.password,
+        phone: req.body.phone,
+        location: req.body.location,
+        email: req.body.email,
+    })
+    
+   try{
+    const saveUser = await user.save()
+    res.json(saveUser)
+   }catch(err){
+        res.status(404).send(err)
+    }
 })
 
 // router.post('/login', async (req,res) => {
