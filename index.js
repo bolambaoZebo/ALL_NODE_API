@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 
 const postRoute = require('./routers/posts');
 const permissionVlogRoute = require('./routers/permissions');
+const casinoPokerTipsRoute = require('./routers/casinoPokerTips');
 
 
 // require('dotenv/config');
@@ -37,6 +38,8 @@ app.get("/vlog", (req, res) => {
 app.use('/posts', postRoute)
 
 app.use('/travel-vlog', permissionVlogRoute)
+
+app.use('/casino-poker-tips', casinoPokerTipsRoute)
 
 
 app.listen(port, () => {
