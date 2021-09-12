@@ -26,7 +26,7 @@ router.post('/register', async (req,res) => {
     //VALIDATE DATA FROM THE USER
     // const validation = Joi.validate(req.body, schema)
 
-    res.send(validation)
+    // res.send(validation)
 //     const user = new User({
 //         name: req.body.name,
 //         password: req.body.password,
