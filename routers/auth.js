@@ -4,12 +4,12 @@ const User = require('../models/User');
 
 const Joi = require('@hapi/joi');
 
-const schema = {
+const schema = Joi.object({
     name: Joi.string().min(6).required(),
     password: Joi.string().min(6).required(),
     location: Joi.string().min(6).required()
     // email: Joi.string().min(6).required().email(),
-}
+})
 
 router.get('/', async (req, res) => {
     // res.send("hello wold")
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
 router.post('/register', async (req,res) => {
 
     //VALIDATE DATA FROM THE USER
-    const validation = Joi.valid(req.body, schema)
+    const validation = schema.validate(req.body)//Joi.valid(req.body, schema)
 
     res.send(validation)
 //     const user = new User({
