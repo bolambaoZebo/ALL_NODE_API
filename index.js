@@ -22,6 +22,21 @@ mongoose.connect(
     console.log('connect db')
 })
 
+//ROUTES
+app.use('/posts', postRoute)
+
+app.use('/vlog', vlogRoute)
+
+app.use('/travel-vlog', permissionVlogRoute)
+
+app.use('/casino-poker-tips', casinoPokerTipsRoute)
+
+
+app.listen(port, () => {
+    console.warn(`THE APP IS LISTENING ${port}`)
+})
+
+
 // app.get("/", (req,res) => {
 //     res.send("hello world")
 // });
@@ -34,17 +49,3 @@ mongoose.connect(
 //     res.send(importTravelData)
 // })
 
-
-//ROUTES
-app.use('/posts', postRoute)
-
-app.use('/vlog', vlogRoute)
-
-app.use('/travel-vlog', permissionVlogRoute)
-
-app.use('/casino-poker-tips', casinoPokerTipsRoute)
-
-
-app.listen(port, () => {
-    console.log(`example app is listening on port ${port}`)
-})
