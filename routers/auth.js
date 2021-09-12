@@ -1,18 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
-
-const Joi = require('@hapi/joi');
-
-const schema = Joi.object({
-    name: Joi.string().min(6).required(),
-    password: Joi.string().min(6).required(),
-    phone: Joi.string().min(6),
-    location: Joi.string().min(6).required(),
-    email: Joi.string(),
-    date: Joi.date()
-    // email: Joi.string().min(6).required().email(),
-})
+const {registerValidation,loginValidation} = require('../utils/validation');
 
 router.get('/', async (req, res) => {
     // res.send("hello wold")
@@ -27,8 +16,7 @@ router.get('/', async (req, res) => {
 router.post('/register', async (req,res) => {
 
     //VALIDATE DATA FROM THE USER
-    const {error} = schema.validate(req.body)//Joi.valid(req.body, schema)
-    
+    const { error } = registerValidation(req.body)
     if(error) return res.status(400).send(error.details[0].message)
 
     const user = new User({
