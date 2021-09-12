@@ -24,9 +24,9 @@ router.get('/', async (req, res) => {
 router.post('/register', async (req,res) => {
 
     //VALIDATE DATA FROM THE USER
-    const validation = schema.validate(req.body)//Joi.valid(req.body, schema)
+    const {error} = schema.validate(req.body)//Joi.valid(req.body, schema)
 
-    res.send(validation)
+    res.send(error.details[0].message)
 //     const user = new User({
 //         name: req.body.name,
 //         password: req.body.password,
