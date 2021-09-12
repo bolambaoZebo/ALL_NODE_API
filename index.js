@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const postRoute = require('./routers/posts');
+const vlogRoute = require('./routers/vlog');
 const permissionVlogRoute = require('./routers/permissions');
 const casinoPokerTipsRoute = require('./routers/casinoPokerTips');
 
@@ -21,13 +22,13 @@ mongoose.connect(
     console.log('connect db')
 })
 
-app.get("/", (req,res) => {
-    res.send("hello world")
-});
+// app.get("/", (req,res) => {
+//     res.send("hello world")
+// });
 
-app.get("/vlog", (req, res) => {
-    res.send(importData)
-})
+// app.get("/vlog", (req, res) => {
+//     res.send(importData)
+// })
 
 // app.get("/travel-vlog", (req, res) => {
 //     res.send(importTravelData)
@@ -36,6 +37,8 @@ app.get("/vlog", (req, res) => {
 
 //ROUTES
 app.use('/posts', postRoute)
+
+app.use('/vlog', vlogRoute)
 
 app.use('/travel-vlog', permissionVlogRoute)
 
