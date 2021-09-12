@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const importData = require("./data.json")
 
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
