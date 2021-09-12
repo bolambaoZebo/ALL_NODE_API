@@ -7,6 +7,7 @@ const Joi = require('@hapi/joi');
 const schema = Joi.object({
     name: Joi.string().min(6).required(),
     password: Joi.string().min(6).required(),
+    phone: Joi.string().min(6),
     location: Joi.string().min(6).required()
     // email: Joi.string().min(6).required().email(),
 })
@@ -27,7 +28,7 @@ router.post('/register', async (req,res) => {
     const {error} = schema.validate(req.body)//Joi.valid(req.body, schema)
     
     if(error) return res.status(400).send(error.details[0].message)
-    
+
     const user = new User({
         name: req.body.name,
         password: req.body.password,
