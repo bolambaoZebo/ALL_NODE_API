@@ -24,22 +24,23 @@ router.get('/', async (req, res) => {
 router.post('/register', async (req,res) => {
 
     //VALIDATE DATA FROM THE USER
-    Joi.valid()
+    const validation = Joi.validate(req.body, schema)
 
-    const user = new User({
-        name: req.body.name,
-        password: req.body.password,
-        phone: req.body.phone,
-        location: req.body.location,
-        email: req.body.email,
-    })
+    res.send(validation)
+//     const user = new User({
+//         name: req.body.name,
+//         password: req.body.password,
+//         phone: req.body.phone,
+//         location: req.body.location,
+//         email: req.body.email,
+//     })
     
-   try{
-    const saveUser = await user.save()
-    res.json(saveUser)
-   }catch(err){
-        res.status(404).send(err)
-    }
+//    try{
+//     const saveUser = await user.save()
+//     res.json(saveUser)
+//    }catch(err){
+//         res.status(404).send(err)
+//     }
 })
 
 // router.post('/login', async (req,res) => {
