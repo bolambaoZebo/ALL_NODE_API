@@ -8,7 +8,9 @@ const schema = Joi.object({
     name: Joi.string().min(6).required(),
     password: Joi.string().min(6).required(),
     phone: Joi.string().min(6),
-    location: Joi.string().min(6).required()
+    location: Joi.string().min(6).required(),
+    email: Joi.string(),
+    date: Joi.date()
     // email: Joi.string().min(6).required().email(),
 })
 
