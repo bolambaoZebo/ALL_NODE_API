@@ -18,7 +18,6 @@ app.use(cors())
 
 mongoose.connect(
     process.env.DATABASE,
-    { userNewUrlParser: true },
     () => {
     console.log('connect db')
 })
