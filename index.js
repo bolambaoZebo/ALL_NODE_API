@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
 const importData = require("./data.json")
-const importTravelData = require("./travel-vlog.json")
+
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const postRoute = require('./routers/posts');
+const permissionVlogRoute = require('./routers/permissions');
 
 
 // require('dotenv/config');
@@ -27,12 +28,15 @@ app.get("/vlog", (req, res) => {
     res.send(importData)
 })
 
-app.get("/travel-vlog", (req, res) => {
-    res.send(importTravelData)
-})
+// app.get("/travel-vlog", (req, res) => {
+//     res.send(importTravelData)
+// })
+
 
 //ROUTES
 app.use('/posts', postRoute)
+
+app.use('/travel-vlog', permissionVlogRoute)
 
 
 app.listen(port, () => {
