@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 // require('dotenv/config');
 
-const authRoute = require('./routers/auth');
+// const authRoute = require('./routers/auth');
 const postRoute = require('./routers/posts');
 const vlogRoute = require('./routers/vlog');
 const permissionVlogRoute = require('./routers/permissions');
@@ -24,7 +24,7 @@ mongoose.connect(
 })
 
 //ROUTES
-app.use('/auth', authRoute)
+// app.use('/auth', authRoute)
 
 app.use('/posts', postRoute)
 
