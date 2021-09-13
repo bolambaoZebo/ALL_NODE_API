@@ -6,8 +6,9 @@ const jwt = require('jsonwebtoken');
 const verifyUser = require('../utils/verifyToken');
 const {registerValidation,loginValidation} = require('../utils/validation');
 
-router.get('/allUser', verifyUser, async (req, res) => {
-    // res.send("hello wold")
+
+
+router.get('/user', verifyUser, async (req, res) => {
     try{
         res.send(req.user)
        }catch(err){
@@ -15,6 +16,7 @@ router.get('/allUser', verifyUser, async (req, res) => {
         }
 });
 
+//REGISTER ROUTE
 router.post('/register', async (req,res) => {
 
     console.log('register path')
@@ -47,8 +49,8 @@ router.post('/register', async (req,res) => {
     }
 })
 
-//LOGIN
 
+//LOGIN ROUTE
 router.post('/login', async (req,res) => {
 
     console.log('login path')
@@ -68,36 +70,5 @@ router.post('/login', async (req,res) => {
     res.header('aut-token', token).send(token)
  
 })
-
-// router.get('/:postId', async (req,res) => {
-//     try{
-//         const post = await Post.findById(req.params.postId)
-//         res.json(post)
-//     }catch (err){
-//         res.json({ message: err })
-//     }
-// })
-
-// router.delete('/:postId', async (req,res) => {
-//     try{
-//         const removePost = await Post.remove({_id: req.params.postId})
-//         res.json(removePost)
-//     }catch (err){
-//         res.json({ message: err })
-//     }
-// })
-
-// router.patch('/:postId', async (req,res) => {
-//     try{ 
-//         const updatePost = await Post.updateOne(
-//             { _id: req.params.postId },
-//             { $set: {title: req.body.title }})
-
-//         res.json(updatePost)
-        
-//     }catch(err){
-//         res.json({ message: err })
-//     }
-// })
 
 module.exports = router;
