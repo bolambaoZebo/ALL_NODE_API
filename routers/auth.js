@@ -19,6 +19,10 @@ router.post('/register', async (req,res) => {
     const { error } = registerValidation(req.body)
     if(error) return res.status(400).send(error.details[0].message)
 
+    //check if user already registered
+    const userPhone = await User.findOne({ phone: req.body.phone })
+    if(userPhone) return res.status(400).send('User already exist')
+
     const user = new User({
         name: req.body.name,
         password: req.body.password,
