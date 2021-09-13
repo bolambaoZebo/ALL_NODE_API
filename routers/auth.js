@@ -3,13 +3,13 @@ const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const verifyUser = require('../utils/verifyToken');
 const {registerValidation,loginValidation} = require('../utils/validation');
 
-router.get('/', async (req, res) => {
+router.get('/allUser', verifyUser, async (req, res) => {
     // res.send("hello wold")
     try{
-        const users = await User.find();
-        res.json(users);
+        res.send(req.user)
        }catch(err){
             res.json({message: err})
         }
