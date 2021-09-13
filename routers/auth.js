@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
+const bcrypt = require('bcryptjs');
 const {registerValidation,loginValidation} = require('../utils/validation');
 
 router.get('/', async (req, res) => {
@@ -23,9 +24,13 @@ router.post('/register', async (req,res) => {
     const userPhone = await User.findOne({ phone: req.body.phone })
     if(userPhone) return res.status(400).send('User already exist')
 
+    //hash password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(req.body.password)
+
     const user = new User({
         name: req.body.name,
-        password: req.body.password,
+        password: hashedPassword,
         phone: req.body.phone,
         location: req.body.location,
         email: req.body.email,
