@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const {registerValidation,loginValidation} = require('../utils/validation');
 
 router.get('/', async (req, res) => {
@@ -38,26 +39,30 @@ router.post('/register', async (req,res) => {
     
    try{
     const saveUser = await user.save()
-    res.json(saveUser)
+    res.json({ user: user._id })
    }catch(err){
         res.status(404).send(err)
     }
 })
 
-// router.post('/login', async (req,res) => {
+//LOGIN
 
-//     const post = new Post({
-//         title: req.body.title,
-//         description: req.body.description
-//     })
-    
-//    try{
-//     const savePost = await post.save()
-//     res.json(savePost)
-//    }catch(err){
-//         res.json({message: err})
-//     }
-// })
+router.post('/login', async (req,res) => {
+
+    const { error } = loginValidation(req.body)
+    if (error) return res.status(400).send(error.details[0].message)
+
+    //check if user already registered
+    const user = await User.findOne({ phone: req.body.phone })
+    if(!user) return res.status(400).send("account doesn't exist")
+    //check password correct
+    const validPass = await bcrypt.compare(req.body.password, user.password)
+    if(!validPass) return res.status(400).send('Invalid password')
+
+    const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET)
+    res.header('aut-token', token)
+ 
+})
 
 // router.get('/:postId', async (req,res) => {
 //     try{
