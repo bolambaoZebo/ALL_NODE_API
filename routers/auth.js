@@ -54,7 +54,7 @@ router.post('/register', async (req,res) => {
 router.post('/login', async (req,res) => {
 
     console.log('login path')
-    console.log(req)
+    console.log(req.body)
 
     const { error } = loginValidation(req.body)
     console.log(error)
