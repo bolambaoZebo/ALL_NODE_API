@@ -54,7 +54,7 @@ router.post('/register', async (req,res) => {
 router.post('/login', async (req,res) => {
 
     console.log('login path')
-    console.log(req.body.phone,req.body.password)
+    console.log(req.body)
 
     const { error } = loginValidation(req.body)
     if (error) return res.status(400).send(error.details[0].message)
