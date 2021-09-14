@@ -71,10 +71,10 @@ router.post('/login', async (req,res) => {
     res.header('aut-token', token).send({
         message: "isSuccessful",
         user: {
+            id: user._id,
             token:token,
-            userId: user._id,
-            userLocation: user.location,
-            userEmail: user.email
+            location: user.location,
+            email: user.email
         }
     })
  
