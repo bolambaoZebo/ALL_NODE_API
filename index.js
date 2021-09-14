@@ -22,6 +22,8 @@ mongoose.connect(
     console.log('connect db')
 })
 
+app.use(express.urlencoded({extended:false}));
+
 //ROUTES
 app.use('/auth', authRoute)
 
