@@ -57,6 +57,7 @@ router.post('/login', async (req,res) => {
     console.log(req.body)
 
     const { error } = loginValidation(req.body)
+    console.log(error)
     if (error) return res.status(400).send(error.details[0].message)
 
     //check if user already registered
