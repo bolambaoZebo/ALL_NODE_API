@@ -7,10 +7,15 @@ const bodyParser = require('body-parser');
 
 const authRoute = require('./routers/auth');
 const postRoute = require('./routers/posts');
+
 const vlogRoute = require('./routers/vlog');
-const videoLink = require('./routers/getVideoLink');
-const horseRaceRoute = require('./routers/horseRace');
 const permissionVlogRoute = require('./routers/permissions');
+
+const videoLink = require('./routers/getVideoLink');
+
+const horseRaceRoute = require('./routers/horseRace');
+const horseNews = require('./routers/horseNews');
+
 const casinoPokerTipsRoute = require('./routers/casinoPokerTips');
 
 let port = process.env.PORT || 3000;
@@ -36,6 +41,8 @@ app.use('/vlog', vlogRoute)
 app.use('/travel-vlog', permissionVlogRoute)
 
 app.use('/horse-race', horseRaceRoute)
+
+app.use('/horse-news', horseNews)
 
 app.use('/video-link', videoLink)
 
