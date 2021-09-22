@@ -5,8 +5,8 @@ const HorseNewsPost = require('../models/HorseNews');
 router.get('/', async (req, res) => {
     // res.send("hello wold")
     try{
-        const posts = await Post.find();
-        res.json(posts);
+        const horsePosts = await HorseNewsPost.find();
+        res.json(horsePosts);
        }catch(err){
             res.json({message: err})
         }
