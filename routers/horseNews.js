@@ -6,14 +6,14 @@ router.get('/', async (req, res) => {
     try{
         const horsePosts = await HorseNewsPost.find();
         
-        const data = {
-            title: horsePosts.title,
-            description: horsePosts.description,
-            imageUrl: horsePosts.imageUrl
-        }
+        // const data = {
+        //     title: horsePosts.title,
+        //     description: horsePosts.description,
+        //     imageUrl: horsePosts.imageUrl
+        // }
         
-        res.send(data)
-        // res.json(data);
+        // res.send(data)
+        res.json(horsePosts);
 
 
        }catch(err){
