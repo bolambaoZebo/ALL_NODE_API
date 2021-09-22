@@ -3,7 +3,6 @@ const router = express.Router();
 const HorseNewsPost = require('../models/HorseNews');
 
 router.get('/', async (req, res) => {
-    // res.send("hello wold")
     try{
         const horsePosts = await HorseNewsPost.find();
         
@@ -13,7 +12,8 @@ router.get('/', async (req, res) => {
             imageUrl: horsePosts.imageUrl
         }
         
-        res.json(data);
+        res.send(data)
+        // res.json(data);
 
 
        }catch(err){
