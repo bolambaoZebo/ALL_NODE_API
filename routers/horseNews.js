@@ -12,6 +12,7 @@ router.get('/', async (req, res) => {
   
             loadedNews.push(
             new NewsModel(
+                horsePosts[key].id,
                 horsePosts[key].title,
                 horsePosts[key].description,
                 horsePosts[key].imageUrl
