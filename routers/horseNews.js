@@ -34,6 +34,8 @@ router.post('/', async (req,res) => {
         description: req.body.description,
         imageUrl: req.body.imageUrl
     })
+
+    console.log(horsePost)
     
    try{
      const saveHorsePost = await horsePost.save()
