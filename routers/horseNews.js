@@ -20,6 +20,8 @@ router.get('/', async (req, res) => {
           );
         };
 
+        console.log(loadedNews)
+
         res.json(loadedNews);
 
        }catch(err){
