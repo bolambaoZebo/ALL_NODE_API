@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const HorseNewsPost = require('../models/HorseNews');
+const NewsModel = require('../models/HorseNewsModel')
 
 router.get('/', async (req, res) => {
     try{
@@ -13,8 +14,20 @@ router.get('/', async (req, res) => {
         // }
         
         // res.send(data)
-        res.json(horsePosts);
 
+        const loadedNews = [];
+
+        for (const key in horsePosts) {
+  
+            loadedNews.push(
+            new NewsModel(
+                horsePosts[key].title,
+                horsePosts[key].description,
+                horsePosts[key].imageUrl
+            )
+          );
+        };
+        res.json(loadedNews);
 
        }catch(err){
             res.json({message: err})
