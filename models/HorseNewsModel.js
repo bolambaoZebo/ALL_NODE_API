@@ -10,4 +10,4 @@ class NewsModel {
       }
   }
   
-  export default NewsModel;
+  module.exports =  NewsModel;

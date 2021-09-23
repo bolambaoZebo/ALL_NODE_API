@@ -6,15 +6,6 @@ const NewsModel = require('../models/HorseNewsModel')
 router.get('/', async (req, res) => {
     try{
         const horsePosts = await HorseNewsPost.find();
-        
-        // const data = {
-        //     title: horsePosts.title,
-        //     description: horsePosts.description,
-        //     imageUrl: horsePosts.imageUrl
-        // }
-        
-        // res.send(data)
-
         const loadedNews = [];
 
         for (const key in horsePosts) {
@@ -27,6 +18,7 @@ router.get('/', async (req, res) => {
             )
           );
         };
+
         res.json(loadedNews);
 
        }catch(err){
