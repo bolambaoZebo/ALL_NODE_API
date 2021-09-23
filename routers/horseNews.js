@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const HorseNewsPost = require('../models/HorseNews');
-// const NewsModel = require('../models/HorseNewsModel')
+const NewsModel = require('../models/HorseNewsModel')
 
 router.get('/', async (req, res) => {
     try{
@@ -11,13 +11,12 @@ router.get('/', async (req, res) => {
         for (const key in horsePosts) {
   
             loadedNews.push(
-                {
-                    "id":horsePosts[key].id,
-                    "title":horsePosts[key].title,
-                    "description":horsePosts[key].description,
-                    "imageUrl":horsePosts[key].imageUrl
-                }
-           
+            new NewsModel(
+                horsePosts[key].id,
+                horsePosts[key].title,
+                horsePosts[key].description,
+                horsePosts[key].imageUrl
+            )
           );
         };
 
