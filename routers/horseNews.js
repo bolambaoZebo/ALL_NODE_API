@@ -39,6 +39,8 @@ router.post('/', async (req,res) => {
     
    try{
      const saveHorsePost = await horsePost.save()
+
+     console.log(saveHorsePost)
      res.json(saveHorsePost)
    }catch(err){
         res.json({message: err})
