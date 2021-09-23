@@ -35,12 +35,12 @@ router.post('/', async (req,res) => {
         imageUrl: req.body.imageUrl
     })
 
-    console.log(horsePost)
+    console.log(`Formated datajson${horsePost}`)
     
    try{
      const saveHorsePost = await horsePost.save()
 
-     console.log(saveHorsePost)
+     console.log(`Save from database${saveHorsePost}`)
      res.json(saveHorsePost)
    }catch(err){
         res.json({message: err})
