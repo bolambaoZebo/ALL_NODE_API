@@ -8,16 +8,26 @@ router.get('/', async (req, res) => {
         const soccerPosts = await SoccerNewsPost.find();
         const loadedNews = [];
 
+        // new SoccerNewsModel(
+        //     soccerPosts[key].id,
+        //     soccerPosts[key].title,
+        //     soccerPosts[key].description,
+        //     soccerPosts[key].imageUrl
         for (const key in soccerPosts) {
   
-            loadedNews.push(
-            new SoccerNewsModel(
-                soccerPosts[key].id,
-                soccerPosts[key].title,
-                soccerPosts[key].description,
-                soccerPosts[key].imageUrl
-            )
-          );
+            loadedNews.push({
+                id: soccerPosts[key].title,
+                en:{
+                    title: soccerPosts[key].en.title,
+                    description: soccerPosts[key].en.description
+                },
+                zh:{
+                    titleChinese: soccerPosts[key].zh.titleChinese,
+                    descriptionChinese: soccerPosts[key].zh.descriptionChinese
+                },
+                imageUrl: soccerPosts[key].imageUrl
+            })
+
         };
 
         console.log(loadedNews)
