@@ -33,12 +33,12 @@ router.post('/', async (req,res) => {
 
     const soccerPost = new SoccerNewsPost({
         en:{
-            title: req.body.title,
-            description: req.body.description,
+            title: req.body.en.title,
+            description: req.body.en.description,
         },
         zh:{
-            titleChinese: req.body.titleChinese,
-            descriptionChinese: req.body.descriptionChinese,
+            titleChinese: req.body.zh.titleChinese,
+            descriptionChinese: req.body.zh.descriptionChinese,
         },
         imageUrl: req.body.imageUrl
     })
