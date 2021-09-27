@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
         //     soccerPosts[key].title,
         //     soccerPosts[key].description,
         //     soccerPosts[key].imageUr
+ 
         for (const key in soccerPosts) {
             enData.push({
                 title: soccerPosts[key].en.title,
@@ -24,8 +25,6 @@ router.get('/', async (req, res) => {
                 titleChinese: soccerPosts[key].zh.titleChinese,
                 descriptionChinese: soccerPosts[key].zh.descriptionChinese
             })
-        }
-        for (const key in soccerPosts) {
               loadedNews.push({
                 id: soccerPosts[key].title,
                 en:enData,
