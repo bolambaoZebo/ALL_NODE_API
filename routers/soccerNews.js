@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
                 descriptionChinese: soccerPosts[key].zh.descriptionChinese
             })
               loadedNews.push({
-                id: soccerPosts[key].title,
+                id: soccerPosts[key].id,
                 en:enData,
                 zh:zhData,
                 imageUrl: soccerPosts[key].imageUrl
