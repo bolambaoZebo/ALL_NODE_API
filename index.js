@@ -16,6 +16,9 @@ const videoLink = require('./routers/getVideoLink');
 const horseRaceRoute = require('./routers/horseRace');
 const horseNews = require('./routers/horseNews');
 
+//Soccer news route
+const soccerNews = require('./routers/soccerNews');
+
 const casinoPokerTipsRoute = require('./routers/casinoPokerTips');
 
 let port = process.env.PORT || 3000;
@@ -32,6 +35,9 @@ mongoose.connect(
 app.use(express.urlencoded({extended:false}));
 
 //ROUTES
+
+app.use('/soccer-news', soccerNews)
+
 app.use('/auth', authRoute)
 
 app.use('/posts', postRoute)
