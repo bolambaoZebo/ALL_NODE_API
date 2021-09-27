@@ -13,11 +13,11 @@ const SoccerSchema = mongoose.Schema({
 
     },
     zh: {
-        title: {
+        titleChinese: {
             type: String,
             required: true
         },
-        description: {
+        descriptionChinese: {
             type: String,
             required: true
         }
