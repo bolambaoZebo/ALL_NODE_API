@@ -10,7 +10,6 @@ const SoccerSchema = mongoose.Schema({
             type: String,
             required: true
         }
-
     },
     zh: {
         titleChinese: {

@@ -37,8 +37,8 @@ router.post('/', async (req,res) => {
             description: req.body.description,
         },
         zh:{
-            title: req.body.titleChinese,
-            description: req.body.descriptionChinese,
+            titleChinese: req.body.titleChinese,
+            descriptionChinese: req.body.descriptionChinese,
         },
         imageUrl: req.body.imageUrl
     })
