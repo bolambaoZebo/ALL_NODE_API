@@ -16,13 +16,13 @@ router.get('/', async (req, res) => {
         //     soccerPosts[key].imageUr
  
         for (const key in soccerPosts) {
-            enData.push({
+            en.push({
                 id: soccerPosts[key].id,
                 imageUrl: soccerPosts[key].imageUrl,
                 title: soccerPosts[key].en.title,
                 description: soccerPosts[key].en.description
             })
-            zhData.push({
+            zh.push({
                 id: soccerPosts[key].id,
                 imageUrl: soccerPosts[key].imageUrl,
                 titleChinese: soccerPosts[key].zh.titleChinese,
