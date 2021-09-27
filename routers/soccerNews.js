@@ -6,8 +6,8 @@ const SoccerNewsModel = require('../models/SoccerNewsModel')
 router.get('/', async (req, res) => {
     try{
         const soccerPosts = await SoccerNewsPost.find();
-        const enData = [];
-        const zhData = [];
+        const en = [];
+        const zh = [];
 
         // new SoccerNewsModel(
         //     soccerPosts[key].id,
@@ -34,8 +34,8 @@ router.get('/', async (req, res) => {
 
         res.json({
             isActive: true,
-            enData,
-            zhData});
+            en,
+            zh});
 
        }catch(err){
             res.json({message: err})
