@@ -27,8 +27,6 @@ router.get('/', async (req, res) => {
             })
               loadedNews.push({
                 id: soccerPosts[key].id,
-                en:enData,
-                zh:zhData,
                 imageUrl: soccerPosts[key].imageUrl
             })
 
@@ -36,7 +34,7 @@ router.get('/', async (req, res) => {
 
         console.log(loadedNews)
 
-        res.json(loadedNews);
+        res.json({loadedNews,enData,zhData});
 
        }catch(err){
             res.json({message: err})
