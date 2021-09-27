@@ -6,7 +6,6 @@ const SoccerNewsModel = require('../models/SoccerNewsModel')
 router.get('/', async (req, res) => {
     try{
         const soccerPosts = await SoccerNewsPost.find();
-        const loadedNews = [];
         const enData = [];
         const zhData = [];
 
@@ -18,23 +17,25 @@ router.get('/', async (req, res) => {
  
         for (const key in soccerPosts) {
             enData.push({
+                id: soccerPosts[key].id,
+                imageUrl: soccerPosts[key].imageUrl,
                 title: soccerPosts[key].en.title,
                 description: soccerPosts[key].en.description
             })
             zhData.push({
+                id: soccerPosts[key].id,
+                imageUrl: soccerPosts[key].imageUrl,
                 titleChinese: soccerPosts[key].zh.titleChinese,
                 descriptionChinese: soccerPosts[key].zh.descriptionChinese
             })
-              loadedNews.push({
-                id: soccerPosts[key].id,
-                imageUrl: soccerPosts[key].imageUrl
-            })
-
         };
 
-        console.log(loadedNews)
+        console.log(soccerPosts)
 
-        res.json({loadedNews,enData,zhData});
+        res.json({
+            isActive: true,
+            enData,
+            zhData});
 
        }catch(err){
             res.json({message: err})
