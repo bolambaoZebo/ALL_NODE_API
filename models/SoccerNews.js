@@ -1,13 +1,26 @@
 const mongoose = require('mongoose');
 
 const SoccerSchema = mongoose.Schema({
-    title: {
-        type: String,
-        required: true
+    en: {
+        title: {
+            type: String,
+            required: true
+        },
+        description: {
+            type: String,
+            required: true
+        }
+
     },
-    description: {
-        type: String,
-        required: true
+    zh: {
+        title: {
+            type: String,
+            required: true
+        },
+        description: {
+            type: String,
+            required: true
+        }
     },
     imageUrl:{
         type: String,

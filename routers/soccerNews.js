@@ -32,8 +32,14 @@ router.get('/', async (req, res) => {
 router.post('/', async (req,res) => {
 
     const soccerPost = new SoccerNewsPost({
-        title: req.body.title,
-        description: req.body.description,
+        en:{
+            title: req.body.title,
+            description: req.body.description,
+        },
+        zh:{
+            title: req.body.titleChinese,
+            description: req.body.descriptionChinese,
+        },
         imageUrl: req.body.imageUrl
     })
 
