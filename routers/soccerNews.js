@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
 
         console.log(soccerPosts)
 
-        res.json({});
+        res.json({isActive: true});
 
        }catch(err){
             res.json({message: err})
